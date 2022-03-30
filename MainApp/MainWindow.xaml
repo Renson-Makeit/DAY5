@@ -1,0 +1,76 @@
+﻿<Window x:Class="MainApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MainApp"
+        mc:Ignorable="d"
+        Title="Главное окно"
+        Height="350"
+        Width="600">
+    <Grid Background="#FFC4F9C4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <TextBlock Text="Выбрать метод" 
+                       HorizontalAlignment="Center"
+                       x:Name="ChoiceMethod"/>
+            
+            <Button Content="Проверить ИН"
+                    Background="#FFEFEBB7"
+                    x:Name="CheckVIN"
+                    Click="CheckVinButton_Click"/>
+            
+            <Button Content="Получить год ИН"
+                    Background="#FFEFEBB7"
+                    x:Name="CheckYearVIN"
+                    Click="GetVinYearButton_Click"/>
+            
+            <Button Content="Страна ИН"
+                    Background="#FFEFEBB7"
+                    x:Name="CheckCountryVIN"
+                    Click="GetVinCountryButton_Click"/>
+            
+            <Button Content="Проверить номер"
+                    Background="#FFEFEBB7"
+                    x:Name="CheckMark"
+                    Click="CheckMarkButton_Click"/>
+
+            <Button Background="#FFEFEBB7"
+                    x:Name="NextmarkAfter"
+                    Click="NextMarkButton_Click">
+                <StackPanel>
+                    <Label Content="Следующий"
+                           Padding="0"/>
+                    <Label Content="номер"
+                           Padding="0"/>
+                    <Label Content="в серии"
+                           Padding="0"/>
+                </StackPanel>
+            </Button>
+
+            <Button Padding="0"
+                    Background="#FFEFEBB7"
+                    x:Name="NextMarkAfterInRange"
+                    Click="GetNextAfterRange_Click">
+                <StackPanel>
+                    <Label Content="Следующий" 
+                           Padding="0"/>
+                    <Label Content="Номер" 
+                           Padding="0"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <RichTextBox Grid.Column="1" 
+                     x:Name="rtbSource"
+                     Background="#FFE69AA2"/>
+        <RichTextBox Grid.Column="2"
+                     x:Name="rtbResult"
+                     Background="#FFE69AA2"/>
+    </Grid>
+</Window>
